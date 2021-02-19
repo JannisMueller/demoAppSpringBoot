@@ -1,16 +1,25 @@
-package com.example.demo;
+package com.example.demo.entities;
 
-//använda för att skicka data mellan service och database
-public class PersonDto {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "persons")
+public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String firstName;
     private String lastName;
 
-    public PersonDto(long id, String firstName, String lastName) {
+    public Person(long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Person() {
+
     }
 
     public long getId() {

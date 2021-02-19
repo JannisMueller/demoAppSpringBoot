@@ -1,12 +1,14 @@
 package com.example.demo.mappers;
 
-import com.example.demo.Person;
-import com.example.demo.PersonDto;
+import com.example.demo.entities.Person;
+import com.example.demo.dtos.PersonDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Component
 public class PersonMapper {
 
     public PersonMapper() {

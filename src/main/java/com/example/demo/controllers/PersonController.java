@@ -1,8 +1,7 @@
 package com.example.demo.controllers;
 
-import com.example.demo.PersonDto;
-import com.example.demo.PersonService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.dtos.PersonDto;
+import com.example.demo.services.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -35,5 +34,10 @@ public class PersonController {
 
         return personService.createPerson(person);
 
+    }
+
+    @DeleteMapping("/person/{id}")
+    public void deleteOne(@PathVariable Long id){
+        personService.deleteOne(id);
     }
 }
